@@ -1,4 +1,4 @@
-pullups
+Pull-Ups
 =======
 
 Pull-Ups compass setup
