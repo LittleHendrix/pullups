@@ -65,14 +65,11 @@ $experimental-support-for-khtml	: false;
 
 @mixin myClearfix {
   *zoom: 1;
-
-  &:before {
-	content: "";
-	display: table;
-  }
-  &:after {
+  &:before, &:after {
     content: "";
     display: table;
+  }
+  &:after {
     height: 0;
     clear: both;
     overflow: hidden;
@@ -94,4 +91,23 @@ $experimental-support-for-khtml	: false;
 		@if $experimental-support-for-opera { -o-animation: $name $duration $timing_function $delay $iteration_count $direction; }
 		animation: $name $duration $timing_function $delay $iteration_count $direction;
 	}
+}
+
+@mixin imgRep($w, $h, $src, $x: 0, $y: 0) {
+    display: block;
+    position: relative;
+    @if $w == "" { width: auto; } @else { width: $w; }
+    @if $h == "" { height: auto; } @else { height: $h; }
+    background-color: transparent;
+    background-image: url($src);  
+    background-repeat: no-repeat;
+    background-size: auto auto;
+    @include imgBgPos($x,$y);
+    border: 0;
+    text-shadow: none;
+    text-indent: -9999px;
+    overflow: hidden;
+}
+@mixin imgBgPos($x: 0, $y: 0) {
+    background-position: $x $y;
 }

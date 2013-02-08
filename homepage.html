@@ -12,34 +12,71 @@
 	<script src="scripts/foundation/modernizr.foundation.js"></script>
 </head>
 <body>				
-    <div class="row">
+    <div class="row container">
         <div class="twelve columns" id="header">
-            <div class="topbar">
-                <div class="six columns">
-                    <div class="contact">
-                        <span class="">Contact us</span>
-                        <span class="ico tel">By phone</span>
-                        <span class="ico email">By email</span>
-                        <span class="ico sms">By text</span>
-                    </div>
+                
+                <div class="row" id="topbar">
+                    <div class="six columns">
+                        <div class="contact">
+                            <span>Contact us</span>
+                            <span class="ico tel">By phone</span>
+                            <span class="ico email">By email</span>
+                            <span class="ico sms">By text</span>
+                        </div>
+                    </div><!--/6 cols -->
+                    <div class="three columns">
+                        <div class="search">
+                            <form>
+                                <input type="text" placeholder="Search" value="" />
+                                <input type="submit" name="search" value="search" />
+                            </form>
+                        </div>
+                    </div><!--/3 cols -->
+                    <div class="three columns">
+                        <nav class="nav-admin">
+                            <a href="/registration">Register</a>
+                            <a href="/Login">Login</a>
+                            <a href="/cookie-info">Cookie info</a>
+                        </nav>
+                    </div><!--/3 cols -->
+                    <br class="clearfix" />
+                </div><!--/topbar -->
+                
+                <div class="row" id="navbar">
+                    <div class="three columns">
+                        <a href="/" id="logo">Pull-Ups</a>
+                    </div><!--/3 cols -->
+                    <div class="six columns offset-by-three">
+                        <nav class="nav-promo">
+                            <a href="/product" class="ico-lnk prod">Products</a>
+                            <a href="/promotions" class="ico-lnk promo">Promotions</a>
+                            <a href="/fun-games" class="ico-lnk games">Fun &amp; Games</a>
+                        </nav>
+                    </div><!--/6 cols -->
+                    <div class="twelve columns">
+                        <nav class="nav-main">
+                            <span class="nav-stage">Choose your stage:</span>
+                        </nav>
+                    </div><!--/12 cols -->
+                </div><!--/navbar -->
+                
+                <div class="row" id="carousel">
+                    <div class="twelve columns centered">
+                        <div class="touchcarousel-wrapper">
+                            <ul class="touchcarousel-container">
+                                <li class="touchcarousel-item">
+                                    <img src="images/girl_smile.jpg" alt="" />
+                                </li>
+                            </ul>
+                        </div><!--/touchcarousel-wrapper -->
+                        <a href="#" class="arrow-holder left"><span class="arrow-icon left"></span></a>
+                        <a href="#" class="arrow-holder right"><span class="arrow-icon right"></span></a>
+                        <span class="crop lrg">&nbsp;</span>
+                    </div><!--/12 cols -->
                 </div>
-                <div class="six columns">
-                    <div class="search">
-                        <form>
-                            <input type="text" placeholder="Search" value="" />
-                            <input type="submit" name="search" value="search" />
-                        </form>
-                    </div>
-                    <div class="admin-links">
-                        <a href="/registration">Register</a>
-                        <a href="/Login">Login</a>
-                        <a href="/cookie-info">Cookie info</a>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-    </div>
+                
+        </div><!--/12 cols -->
+    </div><!--/container -->
 
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script>window.jQuery || document.write('<script src="scripts/libs/jquery-1.9.1.min.js"><\/script>')</script>

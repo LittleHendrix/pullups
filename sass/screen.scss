@@ -53,3 +53,141 @@
 @import "foundation/components/modules/mqueries";
 
 @import "overrides";
+
+$spriteImg: "images/pull-ups_sprites.png";
+
+.clearfix {
+    @include myClearfix;
+}
+body {
+    background: $tan;
+}
+.container {
+    background: $white;
+}
+.noborder {
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+}
+#topbar {
+    height: auto;
+    min-height: 30px;
+    padding: 0 0 5px 0;
+    margin: 0 0 15px 0 !important;
+    background-color: $lime;
+    @include border-radius(0 0 5px 5px);
+    @include background-image(linear-gradient(lighten($lime,25%) $lime));
+}
+.contact span {
+    color: lighten($txtColor,15%);
+    font-size: 16px;
+    font-weight: bold;
+    float: left;
+    padding-top: 10px;
+    margin-right: 10px;
+}
+span.tel {
+    @include imgRep(30px,30px,$spriteImg,-180px,0px);
+}
+span.email {
+    @include imgRep(30px,30px,$spriteImg,-210px,0px);
+}
+span.sms {
+    @include imgRep(30px,30px,$spriteImg,-240px,0px);    
+}
+span.ico {
+    margin: 3px 10px 0 0;
+    cursor: pointer;
+}
+nav.nav-admin {
+    text-align: right;
+    padding-top: 10px;
+    a {
+        color: lighten($txtColor,15%);
+        padding: 0 10px;
+        border-right: 1px solid lighten($txtColor,15%);        
+    }
+    a:last-child {
+        @extend .noborder;
+    }
+}
+#navbar {
+    width: 100%;
+    height: auto;
+    min-height: 160px;
+    padding: 10px 0;
+    margin: 0 0 20px 0 !important;
+    background-color: $blue;    
+    @include border-radius(13px);
+    @include background-image(linear-gradient(lighten($blue,10%) lighten($blue,40%)));
+    @extend .noborder;
+}
+#logo {
+    @include imgRep(180px,100px,$spriteImg,0px,0px);
+}
+nav.nav-promo {
+    text-align: right;
+    a {
+        color: $white;
+        font-size: 17px;
+        font-weight: bold;
+        @include imgRep(auto,40px,$spriteImg,-890px,0px);
+        text-indent: 0;
+        display: inline-block;
+        padding: 12px 0 0 48px;
+        margin: 0 10px 0 0;
+        overflow: visible;
+    }
+    a.promo {
+        background-position: -890px -40px;
+    }
+    a.games {
+        background-position: -890px -80px;
+    }
+}
+nav.nav-main {
+    height: auto;
+    min-height: 40px;
+    padding: 10px;
+    margin: 10px 0 0;
+    background-color: $lime;    
+    @include border-radius(13px);
+    @include background-image(linear-gradient(lighten($lime,10%) $lime));
+    border: 1px solid $green;
+    span.nav-stage {
+        color: $purple;
+        font-size: 17px;
+        font-weight: bold;
+        font-style: italic;
+    }
+}
+.touchcarousel-wrapper {
+    @include border-radius(13px);
+    overflow: hidden;
+}
+a.arrow-holder {
+    z-index: 10;
+}
+span.arrow-icon {
+    @include imgRep(35px,360px,$spriteImg,0px,-100px);
+    position: absolute;
+    top: 0;
+    &.left {
+        left: 10px;
+    }
+    &.right {
+        background-position: -40px -100px;
+        right: 10px;
+    }
+}
+span.crop {
+    z-index: 5;
+    &.lrg {
+        @include imgRep(100%,360px,$spriteImg,0px,-470px);
+        position: absolute;
+        top: 0;
+        left: 45px;
+        max-width: 930px;
+    }
+}
