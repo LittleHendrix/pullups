@@ -974,6 +974,269 @@ abbr {
     display: inherit !important;
   }
 }
+/* CSS for jQuery Orbit Plugin 1.4.0
+ * Maintained for Foundation. foundation.zurb.com
+ * Free to use under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+*/
+/* Container ---------------------- */
+/* line 9, ../../../Ruby193/lib/ruby/gems/1.9.1/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
+.orbit-wrapper {
+  width: 1px;
+  height: 1px;
+  position: relative;
+}
+
+/* line 11, ../../../Ruby193/lib/ruby/gems/1.9.1/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
+.orbit {
+  width: 1px;
+  height: 1px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 17px;
+}
+/* line 13, ../../../Ruby193/lib/ruby/gems/1.9.1/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
+.orbit.with-bullets {
+  margin-bottom: 40px;
+}
+/* line 15, ../../../Ruby193/lib/ruby/gems/1.9.1/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
+.orbit .orbit-slide {
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* line 16, ../../../Ruby193/lib/ruby/gems/1.9.1/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
+.orbit a.orbit-slide {
+  border: none;
+  line-height: 0;
+  display: none;
+}
+/* line 17, ../../../Ruby193/lib/ruby/gems/1.9.1/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
+.orbit div.orbit-slide {
+  width: 100%;
+  height: 100%;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+
+/* Note: If your slider only uses content or anchors, you're going to want to put the width and height declarations on the ".orbit>div" and "div.orbit>a" tags in addition to just the .orbit-wrapper */
+/* Timer ---------------------- */
+/* line 25, ../../../Ruby193/lib/ruby/gems/1.9.1/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
+.orbit-wrapper .timer {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  opacity: .6;
+  cursor: pointer;
+  z-index: 31;
+}
+/* line 26, ../../../Ruby193/lib/ruby/gems/1.9.1/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
+.orbit-wrapper span.rotator {
+  display: block;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  left: -20px;
+  background: url('images/foundation/orbit/rotator-black.png?1360232704') no-repeat;
+  z-index: 3;
+}
+/* line 27, ../../../Ruby193/lib/ruby/gems/1.9.1/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
+.orbit-wrapper span.rotator.move {
+  left: 0;
+}
+/* line 29, ../../../Ruby193/lib/ruby/gems/1.9.1/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
+.orbit-wrapper span.mask {
+  display: block;
+  width: 20px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  overflow: hidden;
+}
+/* line 30, ../../../Ruby193/lib/ruby/gems/1.9.1/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
+.orbit-wrapper span.mask.move {
+  width: 40px;
+  left: 0;
+  background: url('images/foundation/orbit/timer-black.png?1360232705') repeat 0 0;
+}
+/* line 32, ../../../Ruby193/lib/ruby/gems/1.9.1/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
+.orbit-wrapper span.pause {
+  display: block;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url('images/foundation/orbit/pause-black.png?1360232704') no-repeat;
+  z-index: 4;
+  opacity: 0;
+}
+/* line 33, ../../../Ruby193/lib/ruby/gems/1.9.1/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
+.orbit-wrapper span.pause.active {
+  background: url('images/foundation/orbit/pause-black.png?1360232704') no-repeat 0 -40px;
+}
+/* line 35, ../../../Ruby193/lib/ruby/gems/1.9.1/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
+.orbit-wrapper .timer:hover span.pause, .orbit-wrapper .timer:focus span.pause, .orbit-wrapper span.pause.active {
+  opacity: 1;
+}
+
+/* Captions ---------------------- */
+/* line 40, ../../../Ruby193/lib/ruby/gems/1.9.1/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
+.orbit-caption {
+  display: none;
+  font-family: inherit;
+}
+
+/* line 41, ../../../Ruby193/lib/ruby/gems/1.9.1/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
+.orbit-wrapper .orbit-caption {
+  background: black;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 30;
+  color: white;
+  text-align: center;
+  padding: 7px 0;
+  font-size: 13px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Directional Nav ---------------------- */
+/* line 46, ../../../Ruby193/lib/ruby/gems/1.9.1/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
+.orbit-wrapper .slider-nav {
+  display: block;
+}
+/* line 47, ../../../Ruby193/lib/ruby/gems/1.9.1/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
+.orbit-wrapper .slider-nav span {
+  width: 39px;
+  height: 50px;
+  text-indent: -9999px;
+  position: absolute;
+  z-index: 30;
+  top: 50%;
+  margin-top: -25px;
+  cursor: pointer;
+}
+/* line 48, ../../../Ruby193/lib/ruby/gems/1.9.1/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
+.orbit-wrapper .slider-nav span.right {
+  background: url('images/foundation/orbit/right-arrow.png?1360232704');
+  background-size: 100%;
+  right: 0;
+}
+/* line 49, ../../../Ruby193/lib/ruby/gems/1.9.1/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
+.orbit-wrapper .slider-nav span.left {
+  background: url('images/foundation/orbit/left-arrow.png?1360232704');
+  background-size: 100%;
+  left: 0;
+}
+
+/* line 54, ../../../Ruby193/lib/ruby/gems/1.9.1/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
+.lt-ie9 .orbit-wrapper .slider-nav span.right {
+  background: url('images/foundation/orbit/right-arrow-small.png?1360232704');
+}
+/* line 55, ../../../Ruby193/lib/ruby/gems/1.9.1/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
+.lt-ie9 .orbit-wrapper .slider-nav span.left {
+  background: url('images/foundation/orbit/left-arrow-small.png?1360232704');
+}
+
+/* Bullet Nav ---------------------- */
+/* line 61, ../../../Ruby193/lib/ruby/gems/1.9.1/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
+ul.orbit-bullets {
+  position: absolute;
+  z-index: 30;
+  list-style: none;
+  bottom: -40px;
+  left: 50%;
+  margin-left: -50px;
+  padding: 0;
+}
+/* line 62, ../../../Ruby193/lib/ruby/gems/1.9.1/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
+ul.orbit-bullets li {
+  float: left;
+  margin-left: 5px;
+  cursor: pointer;
+  color: #999999;
+  text-indent: -9999px;
+  background: url('images/foundation/orbit/bullets.jpg?1360232704') no-repeat 4px 0;
+  width: 13px;
+  height: 12px;
+  overflow: hidden;
+}
+/* line 63, ../../../Ruby193/lib/ruby/gems/1.9.1/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
+ul.orbit-bullets li.active {
+  color: #222222;
+  background-position: -8px 0;
+}
+/* line 64, ../../../Ruby193/lib/ruby/gems/1.9.1/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
+ul.orbit-bullets li.has-thumb {
+  background: none;
+  width: 100px;
+  height: 75px;
+}
+/* line 65, ../../../Ruby193/lib/ruby/gems/1.9.1/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
+ul.orbit-bullets li.active.has-thumb {
+  background-position: 0 0;
+  border-top: 2px solid black;
+}
+
+/* Orbit Slide Counter */
+/* line 70, ../../../Ruby193/lib/ruby/gems/1.9.1/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
+.orbit-slide-counter {
+  position: absolute;
+  bottom: 0;
+  z-index: 99;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px;
+}
+
+/* Fluid Layout ---------------------- */
+/* line 74, ../../../Ruby193/lib/ruby/gems/1.9.1/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
+.orbit img.fluid-placeholder {
+  visibility: hidden;
+  position: static;
+  display: block;
+  width: 100%;
+}
+
+/* line 75, ../../../Ruby193/lib/ruby/gems/1.9.1/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
+.orbit, .orbit-wrapper {
+  width: 100% !important;
+}
+
+/* Correct timer in IE */
+/* line 78, ../../../Ruby193/lib/ruby/gems/1.9.1/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
+.lt-ie9 .timer {
+  display: none !important;
+}
+
+/* line 79, ../../../Ruby193/lib/ruby/gems/1.9.1/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
+.lt-ie9 .orbit-caption {
+  background: black;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000);
+  zoom: 1;
+}
+
+@media only screen and (max-width: 767px) {
+  /* line 83, ../../../Ruby193/lib/ruby/gems/1.9.1/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
+  .orbit.orbit-stack-on-small img.fluid-placeholder {
+    visibility: visible;
+  }
+
+  /* line 86, ../../../Ruby193/lib/ruby/gems/1.9.1/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
+  .orbit.orbit-stack-on-small .orbit-slide {
+    position: static;
+    margin-bottom: 10px;
+  }
+}
 /* Visibility Classes ---------------------- */
 /*                                           */
 /* Standard (large) display targeting */
@@ -2511,10 +2774,10 @@ span.tel {
   position: relative;
   width: 30px;
   height: 30px;
-  background-color: transparent;
   background-image: url("images/pull-ups_sprites.png");
   background-repeat: no-repeat;
   background-size: auto auto;
+  background-color: transparent;
   background-position: -180px 0px;
   border: 0;
   text-shadow: none;
@@ -2528,10 +2791,10 @@ span.email {
   position: relative;
   width: 30px;
   height: 30px;
-  background-color: transparent;
   background-image: url("images/pull-ups_sprites.png");
   background-repeat: no-repeat;
   background-size: auto auto;
+  background-color: transparent;
   background-position: -210px 0px;
   border: 0;
   text-shadow: none;
@@ -2545,10 +2808,10 @@ span.sms {
   position: relative;
   width: 30px;
   height: 30px;
-  background-color: transparent;
   background-image: url("images/pull-ups_sprites.png");
   background-repeat: no-repeat;
   background-size: auto auto;
+  background-color: transparent;
   background-position: -240px 0px;
   border: 0;
   text-shadow: none;
@@ -2600,10 +2863,10 @@ nav.nav-admin a {
   position: relative;
   width: 180px;
   height: 100px;
-  background-color: transparent;
   background-image: url("images/pull-ups_sprites.png");
   background-repeat: no-repeat;
   background-size: auto auto;
+  background-color: transparent;
   background-position: 0px 0px;
   border: 0;
   text-shadow: none;
@@ -2624,10 +2887,10 @@ nav.nav-promo a {
   position: relative;
   width: auto;
   height: 40px;
-  background-color: transparent;
   background-image: url("images/pull-ups_sprites.png");
   background-repeat: no-repeat;
   background-size: auto auto;
+  background-color: transparent;
   background-position: -890px 0px;
   border: 0;
   text-shadow: none;
@@ -2677,61 +2940,136 @@ nav.nav-main span.nav-stage {
 
 /* line 165, ../sass/screen.scss */
 .touchcarousel-wrapper {
-  -webkit-border-radius: 13px;
-  -moz-border-radius: 13px;
-  -ms-border-radius: 13px;
-  -o-border-radius: 13px;
-  border-radius: 13px;
-  overflow: hidden;
+  width: 100%;
+  height: auto;
+  max-width: 930px;
+  max-height: 360px;
+  margin: auto;
+  margin-bottom: 20px;
 }
 
-/* line 169, ../sass/screen.scss */
-a.arrow-holder {
-  z-index: 10;
+/* line 173, ../sass/screen.scss */
+ul.touchcarousel-container {
+  margin: 0;
 }
 
-/* line 172, ../sass/screen.scss */
-span.arrow-icon {
+/* line 176, ../sass/screen.scss */
+.orbit-wrapper .slider-nav span {
+  top: 0;
+  margin-top: 0;
+}
+/* line 179, ../sass/screen.scss */
+.orbit-wrapper .slider-nav span.left {
   display: block;
   position: relative;
   width: 35px;
   height: 360px;
-  background-color: transparent;
   background-image: url("images/pull-ups_sprites.png");
   background-repeat: no-repeat;
   background-size: auto auto;
+  background-color: transparent;
   background-position: 0px -100px;
   border: 0;
   text-shadow: none;
   text-indent: -9999px;
   overflow: hidden;
+  left: -35px;
   position: absolute;
-  top: 0;
 }
-/* line 176, ../sass/screen.scss */
-span.arrow-icon.left {
-  left: 10px;
-}
-/* line 179, ../sass/screen.scss */
-span.arrow-icon.right {
+/* line 184, ../sass/screen.scss */
+.orbit-wrapper .slider-nav span.right {
+  display: block;
+  position: relative;
+  width: 35px;
+  height: 360px;
+  background-image: url("images/pull-ups_sprites.png");
+  background-repeat: no-repeat;
+  background-size: auto auto;
+  background-color: transparent;
   background-position: -40px -100px;
-  right: 10px;
+  border: 0;
+  text-shadow: none;
+  text-indent: -9999px;
+  overflow: hidden;
+  right: -35px;
+  position: absolute;
 }
 
-/* line 184, ../sass/screen.scss */
+/* line 190, ../sass/screen.scss */
+ul.orbit-bullets {
+  bottom: 0px;
+}
+/* line 192, ../sass/screen.scss */
+ul.orbit-bullets li {
+  color: white;
+  width: 30px;
+  height: 30px;
+  border: 2px solid white;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  border-radius: 15px;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eca4d6), color-stop(50%, #e271bf), color-stop(51%, #db4eaf), color-stop(100%, #e065ba));
+  background-image: -webkit-linear-gradient(#eca4d6, #e271bf 50%, #db4eaf 51%, #e065ba);
+  background-image: -moz-linear-gradient(#eca4d6, #e271bf 50%, #db4eaf 51%, #e065ba);
+  background-image: -o-linear-gradient(#eca4d6, #e271bf 50%, #db4eaf 51%, #e065ba);
+  background-image: linear-gradient(#eca4d6, #e271bf 50%, #db4eaf 51%, #e065ba);
+  background-position: 0 0;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 28px;
+  text-indent: 0px;
+  text-align: center;
+}
+/* line 205, ../sass/screen.scss */
+ul.orbit-bullets li.active, ul.orbit-bullets li:hover {
+  background-position: 0 0;
+  color: #1992d1;
+}
+
+/* line 211, ../sass/screen.scss */
+.lt-ie10 ul.orbit-bullets li {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+  display: block;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background-image: url("images/pull-ups_sprites.png");
+  background-repeat: no-repeat;
+  background-size: auto auto;
+  background-color: transparent;
+  background-position: -80px -100px;
+  border: 0;
+  text-shadow: none;
+  text-indent: -9999px;
+  overflow: hidden;
+  text-indent: 0px;
+}
+
+/* line 216, ../sass/screen.scss */
+.orbit.with-bullets {
+  margin-bottom: 0px;
+}
+
+/* line 219, ../sass/screen.scss */
 span.crop {
   z-index: 5;
 }
-/* line 186, ../sass/screen.scss */
+/* line 221, ../sass/screen.scss */
 span.crop.lrg {
   display: block;
   position: relative;
   width: 100%;
-  height: 360px;
-  background-color: transparent;
+  height: 100px;
   background-image: url("images/pull-ups_sprites.png");
   background-repeat: no-repeat;
   background-size: auto auto;
+  background-color: transparent;
   background-position: 0px -470px;
   border: 0;
   text-shadow: none;
@@ -2741,4 +3079,41 @@ span.crop.lrg {
   top: 0;
   left: 45px;
   max-width: 930px;
+}
+
+/* line 229, ../sass/screen.scss */
+.box {
+  background: #f5f2eb;
+  min-height: 290px;
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  -ms-border-radius: 13px;
+  -o-border-radius: 13px;
+  border-radius: 13px;
+  overflow: hidden;
+  margin: 0 0 20px 0;
+}
+/* line 235, ../sass/screen.scss */
+.box h4 {
+  text-align: center;
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 63px;
+  background-image: url("images/box-header.png");
+  background-repeat: no-repeat;
+  background-size: auto auto;
+  background-color: transparent;
+  background-position: 50% 0;
+  border: 0;
+  text-shadow: none;
+  text-indent: -9999px;
+  overflow: hidden;
+  background-size: 100% 100%;
+  line-height: 36px;
+  color: white;
+  font-size: 23px;
+  text-indent: 0px;
+  margin: 0;
+  z-index: 10;
 }

@@ -98,10 +98,10 @@ $experimental-support-for-khtml	: false;
     position: relative;
     @if $w == "" { width: auto; } @else { width: $w; }
     @if $h == "" { height: auto; } @else { height: $h; }
-    background-color: transparent;
     background-image: url($src);  
     background-repeat: no-repeat;
     background-size: auto auto;
+    background-color: transparent;
     @include imgBgPos($x,$y);
     border: 0;
     text-shadow: none;

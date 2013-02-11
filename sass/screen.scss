@@ -43,7 +43,7 @@
 // @import "foundation/components/modules/ui";
 // @import "foundation/components/modules/topbar";
 // @import "foundation/components/modules/navbar";
-// @import "foundation/components/modules/orbit";
+@import "foundation/components/modules/orbit";
 // @import "foundation/components/modules/reveal";
 // @import "foundation/components/modules/offcanvas";
 // @import "foundation/components/modules/clearing";
@@ -163,31 +163,84 @@ nav.nav-main {
     }
 }
 .touchcarousel-wrapper {
-    @include border-radius(13px);
-    overflow: hidden;
+    width: 100%;
+    height: auto;
+    max-width: 930px;
+    max-height: 360px;
+    margin: auto;
+    margin-bottom: 20px;
 }
-a.arrow-holder {
-    z-index: 10;
+ul.touchcarousel-container {
+    margin: 0;
 }
-span.arrow-icon {
-    @include imgRep(35px,360px,$spriteImg,0px,-100px);
-    position: absolute;
-    top: 0;
+.orbit-wrapper .slider-nav span {
+        top: 0;
+        margin-top: 0;
     &.left {
-        left: 10px;
+        @include imgRep(35px,360px,$spriteImg,0px,-100px);
+        left: -35px;
+        position: absolute;
     }
     &.right {
-        background-position: -40px -100px;
-        right: 10px;
+        @include imgRep(35px,360px,$spriteImg,-40px,-100px);
+        right: -35px;
+        position: absolute;
     }
+}
+ul.orbit-bullets {
+    bottom: 0px;
+    li {
+        color: $white;
+        width: 30px;
+        height: 30px;
+        border: 2px solid $white;
+        @include border-radius(15px);
+        @include background-image(linear-gradient(#eca4d6, #e271bf 50%, #db4eaf 51%, #e065ba));
+        background-position: 0 0;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 28px;
+        text-indent: 0px;
+        text-align: center;
+        &.active, &:hover {
+            background-position: 0 0;
+            color: $blue;
+        }
+    }
+}
+.lt-ie10 ul.orbit-bullets li {
+    @include border-radius(0px);
+    @include imgRep(30px,30px,$spriteImg,-80px,-100px);
+    text-indent: 0px;
+}
+.orbit.with-bullets {
+    margin-bottom: 0px;
 }
 span.crop {
     z-index: 5;
     &.lrg {
-        @include imgRep(100%,360px,$spriteImg,0px,-470px);
+        @include imgRep(100%,100px,$spriteImg,0px,-470px);
         position: absolute;
         top: 0;
         left: 45px;
         max-width: 930px;
+    }
+}
+.box {
+    background: $tan;
+    min-height: 290px;
+    @include border-radius(13px);
+    overflow: hidden;
+    margin: 0 0 20px 0;
+    h4 {
+        text-align: center;
+        @include imgRep(100%,63px,"images/box-header.png",50%,0);
+        background-size: 100% 100%;
+        line-height: 36px;
+        color: $white;
+        font-size: 23px;
+        text-indent: 0px;
+        margin: 0;
+        z-index: 10;
     }
 }
