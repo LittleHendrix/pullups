@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie10" lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie10" lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie10" lt-ie9" lang="en"> <![endif]-->
-<!--[if IE 9]>         <html class="no-js lt-ie10" lang="en"> <![endif]-->
+<!--[if lt IE 7]>      <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie10 lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie10 lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js lt-ie10 ie9" lang="en"> <![endif]-->
 <!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
 	<meta charset="utf-8" />
@@ -17,90 +17,103 @@
         <div class="twelve columns" id="header">
                 
                 <div class="row" id="topbar">
-                    <div class="six columns">
+                    <div class="four mobile-two columns">
                         <div class="contact">
                             <span>Contact us</span>
                             <span class="ico tel">By phone</span>
                             <span class="ico email">By email</span>
                             <span class="ico sms">By text</span>
                         </div>
-                    </div><!--/6 cols -->
-                    <div class="three columns">
-                        <div class="search">
+                    </div><!--/4 cols -->
+                    <div class="five mobile-two columns">
+                        <div class="searchbar">
                             <form>
-                                <input type="text" placeholder="Search" value="" />
-                                <input type="submit" name="search" value="search" />
+                                <input type="text" placeholder="Search" class="input-txt search-box" value="" />
+                                <input type="submit" name="search" class="input-btn search-btn" value="search" />
                             </form>
                         </div>
-                    </div><!--/3 cols -->
-                    <div class="three columns">
+                    </div><!--/5 cols -->
+                    <div class="three mobile-four columns">
                         <nav class="nav-admin">
                             <a href="/registration">Register</a>
                             <a href="/Login">Login</a>
-                            <a href="/cookie-info">Cookie info</a>
+                            <a href="/cookie-info" class="noborder">Cookie info</a>
                         </nav>
                     </div><!--/3 cols -->
                     <br class="clearfix" />
                 </div><!--/topbar -->
                 
-                <div class="row" id="navbar">
-                    <div class="three columns">
-                        <a href="/" id="logo">Pull-Ups</a>
-                    </div><!--/3 cols -->
-                    <div class="nine columns">
-                        <nav class="nav-promo">
-                            <a href="/product" class="ico-lnk prod">Products</a>
-                            <a href="/promotions" class="ico-lnk promo">Promotions</a>
-                            <a href="/fun-games" class="ico-lnk games">Fun &amp; Games</a>
-                        </nav>
-                    </div><!--/6 cols -->
+                <div class="row">
                     <div class="twelve columns">
-                        <nav class="nav-main">
-                            <span class="nav-stage">Choose your stage:</span>
-                        </nav>
+                        <div id="navbar">
+                            <div class="row">
+                                <div class="three mobile-four columns">
+                                    <a href="/" id="logo">Pull-Ups</a>
+                                </div><!--/3 cols -->
+                                <div class="nine mobile-four columns">
+                                    <nav class="nav-promo">
+                                        <a href="/product" class="ico-lnk prod">Products</a>
+                                        <a href="/promotions" class="ico-lnk promo">Promotions</a>
+                                        <a href="/fun-games" class="ico-lnk games">Fun &amp; Games</a>
+                                    </nav>
+                                </div><!--/6 cols -->
+                            </div><!--/row -->
+                            <div class="row">
+                                <div class="twelve columns">
+                                    <nav class="nav-main">
+                                        <span class="nav-stage">Choose your stage:</span>
+                                        <a href="/starting-out" class=""><span class="stage-ico"><img src="images/starting_out_boy.jpg" alt="" /></span>Starting Out</a>
+                                        <a href="/keeping-going" class="middle"><span class="stage-ico"><img src="images/keeping_going_girl.jpg" alt="" /></span>Keeping Going</a>
+                                        <a href="/finishing-up" class=""><span class="stage-ico"><img src="images/finishing_up_girl.jpg" alt="" /></span>Finishing Up</a>
+                                    </nav>
+                                </div><!--/12 cols -->
+                            </div><!--/row -->
+                        </div><!--/navbar -->
                     </div><!--/12 cols -->
-                </div><!--/navbar -->
+                </div><!--/row -->
                 
                 <div class="row" id="carousel">
                     <div class="twelve columns centered">
-                        <div class="touchcarousel-wrapper">
-                            <ul class="touchcarousel-container" id="featured">
-                                <!--<li class="touchcarousel-item">-->
-                                    <img src="images/girl_smile.jpg" alt="" />
-                                    <img src="images/girl_smile.jpg" alt="" />
-                                    <img src="images/girl_smile.jpg" alt="" />
-                                <!--</li>-->
-                            </ul>
-                            <span class="crop lrg">&nbsp;</span>
+                        <div class="carousel-wrapper">
+                            <span class="crop lrg hide-for-small">&nbsp;</span>
+                            <div id="featured">
+                                <img src="images/girl_smile.jpg" alt="" />
+                                <img src="images/girl_smile.jpg" alt="" />
+                                <img src="images/girl_smile.jpg" alt="" />
+                            </div>
                         </div><!--/touchcarousel-wrapper -->
                     </div><!--/12 cols -->
                 </div>
                 
                 <div class="row">
-                    <div class="six columns">
-                        <div class="box">
-                            <h4>Support Videos</h4>
-                        </div>
-                        <div class="box">
-                            <h4>Expert Advice</h4>
-                        </div>
-                    </div><!--/6 cols -->
-                    <div class="six columns">
+                    <div class="ten mobile-four columns">
                         <div class="row">
-                            <div class="eight columns">
+                            <div class="seven mobile-two columns">
+                                <div class="box">
+                                    <h4>Support Videos</h4>
+                                </div>
+                                <div class="box">
+                                    <h4>Expert Advice</h4>
+                                </div>
+                            </div><!--/7 cols -->
+                            <div class="five mobile-two columns">
                                 <div class="box">
                                     <h4>Starting to Potty Train?</h4>
                                 </div>
                                 <div class="box">
                                     <h4>Learning Tools</h4>
                                 </div>
-                            </div><!--/8 cols -->
-                            <div class="four columns">
-                                
-                            </div><!--/4 cols -->
+                            </div><!--/5 cols -->
+                        </div><!--/row -->
+                    </div><!--/10 cols -->
+                    <div class="two mobile-four columns">
+                        <div class="box ads">
+                            <img src="images/pack_pullups_girl.png" alt="" />
+                            <img src="images/pack_pullups_boy.png" alt="" />
+                            <img src="images/pack_pullups_multi.png" alt="" />                            
                         </div>
-                    </div><!--/6 cols -->
-                </div>
+                    </div><!--/2 cols -->
+                </div><!--/row -->
                 
         </div><!--/12 cols -->
     </div><!--/container -->

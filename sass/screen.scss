@@ -8,7 +8,7 @@
 // ----------------------------------------
 // Import specific parts of Foundation by commenting the import "foundation"
 // and uncommenting what you want below. You must uncomment the following if customizing
-
+@import "compass/css3/pie";
 @import "compass/css3";
 @import "foundation/settings";
 @import "foundation/functions/all";
@@ -54,10 +54,119 @@
 
 @import "overrides";
 
+// CSS3 Pie settings
+// Set this to wherever you end up putting your behavior file.
+//
+// **Note:** this file must be served as a root-relative resource or
+// else IE will interpret it as relative to the current webpage
+// instead of the stylesheet.
+//
+// **Also Note:** this file must be delivered with a mime-type of:
+//
+//    text/x-component
+$pie-behavior: url("css/PIE.htc");
+// It is suggested that you use Sass's @extend directive to apply the PIE
+// behavior to your elements. Setting this variable will tell the `pie` mixin
+// to extend it. Or you can just extend the base class yourself.
+$pie-base-class: pie-element;
+// There are two approaches to creating PIE elements
+// The default approach is to make the element position: relative.
+.pie-element {
+  // relative is the default, so passing relative
+  // is redundant, but we do it here for clarity.
+  @include pie-element(relative);
+}
+.bordered {
+  @include pie; // Because $pie-base-class is set, this results in an extend of .pie-element. 
+  @include border-radius(5px);
+}
+
+.gradient {
+  @include pie; // Because $pie-base-class is set, this results in an extend of .pie-element.
+  @include background(linear-gradient(#f00, #00f));
+}
+// But sometimes this messes up your positioning
+// So you can also use z-indexing. In this case
+// an ancestor element before or having the first
+// opaque background should be marked as a pie-container
+// which gives it a z-index of 0 (actually any z-index
+// can be provided to the pie-container mixin).
+// And then the pie element itself should be given
+// a z-index of -1.
+.pie-container {
+  @include pie-container;
+}
+.z-pie-element {
+  // this will get a z-index of 0, you can pass a z-index value if you want
+  @include pie-element(1);
+}
+// This is just a simple example of how to use the z-index approach.
+.widget {
+  @extend .pie-container;
+  h3 {
+    @include pie(z-pie-element); // This will extend .z-pie-element instead of .pie-element
+  }
+}
+
 $spriteImg: "images/pull-ups_sprites.png";
+
+// CSS3 Pie elements
+.lt-ie9 {    
+    .row, .columns, #navbar, .nav-promo, .nav-main, .carousel-wrapper{
+        // IE7 fix for
+        // box-sizing: border-box;
+        *behavior: url("css/boxsizing.htc");
+    }
+    .nav-main {
+        //*display: none;
+    }
+    #topbar, #navbar, .box {
+        @include pie;
+    }
+    #topbar {
+        @include border-radius(0 0 8px 8px);
+    }
+    .searchbar {
+        @extend .pie-container;
+        input {
+            @include pie(z-pie-element);
+        }
+        input.search-btn {
+            top: 1px;
+            *top: 2px;
+        }
+    }
+    .orbit-wrapper .slider-nav span {
+        &.right {
+            background: url($spriteImg) no-repeat -40px -100px transparent;
+        }
+        &.left {
+            background: url($spriteImg) no-repeat 0px -100px transparent;
+        }
+    }
+    .box h4 {
+        @include pie;
+        background-image: url(images/box-header-ie.png);
+        @include bkgSizeFix("images/box-header-ie.png");
+    }
+}
+.ie9 {
+    .searchbar input.search-btn {
+        height: 26px;
+    }
+}
 
 .clearfix {
     @include myClearfix;
+}
+input.input-txt {
+    margin: 0;
+    &:focus {
+        outline: none;
+    }
+}
+div {
+    position: relative;
 }
 body {
     background: $tan;
@@ -66,9 +175,13 @@ body {
     background: $white;
 }
 .noborder {
-    border-color: transparent;
-    border-style: none;
-    border-width: 0;
+    border-color: transparent !important;
+    border-style: none !important;
+    border-width: 0 !important;
+}
+.btn-notxt {
+    *font-size: 0px;
+    *line-height: 0px;
 }
 #topbar {
     height: auto;
@@ -77,14 +190,14 @@ body {
     margin: 0 0 15px 0 !important;
     background-color: $lime;
     @include border-radius(0 0 5px 5px);
-    @include background-image(linear-gradient(lighten($lime,25%) $lime));
+    @include background(linear-gradient(lighten($lime,25%) $lime));
 }
 .contact span {
     color: lighten($txtColor,15%);
     font-size: 16px;
     font-weight: bold;
     float: left;
-    padding-top: 10px;
+    padding-top: 12px;
     margin-right: 10px;
 }
 span.tel {
@@ -99,10 +212,37 @@ span.sms {
 span.ico {
     margin: 3px 10px 0 0;
     cursor: pointer;
+    padding-top: 0px;
+}
+.searchbar {
+    top: 5px;
+    text-align: right;
+}
+input.search-box {
+    width: 100%;
+    max-width: 230px;
+    padding: 5px 50px 5px 10px;
+    @include border-radius(15px);
+    border: 1px solid lighten($black, 90%);
+}
+input.input-btn {
+    &.search-btn {
+        @include border-radius(15px);
+        border: 1px solid lighten($black, 90%);
+        @include imgRep(40px,27px,$spriteImg,-900px,-127px);
+        background-color: $blue;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        @extend .btn-notxt;
+        &:hover {
+            cursor: pointer;
+        }
+    }
 }
 nav.nav-admin {
     text-align: right;
-    padding-top: 10px;
+    padding-top: 12px;
     a {
         color: lighten($txtColor,15%);
         padding: 0 10px;
@@ -116,11 +256,11 @@ nav.nav-admin {
     width: 100%;
     height: auto;
     min-height: 160px;
-    padding: 10px 0;
+    padding: 10px 10px 15px;
     margin: 0 0 20px 0 !important;
     background-color: $blue;    
     @include border-radius(13px);
-    @include background-image(linear-gradient(lighten($blue,10%) lighten($blue,40%)));
+    @include background(linear-gradient(lighten($blue,10%) lighten($blue,40%)));
     @extend .noborder;
 }
 #logo {
@@ -138,6 +278,7 @@ nav.nav-promo {
         padding: 12px 0 0 48px;
         margin: 0 10px 0 0;
         overflow: visible;
+        *height: 28px;
     }
     a.promo {
         background-position: -890px -40px;
@@ -153,38 +294,66 @@ nav.nav-main {
     margin: 10px 0 0;
     background-color: $lime;    
     @include border-radius(13px);
-    @include background-image(linear-gradient(lighten($lime,10%) $lime));
+    @include background(linear-gradient(lighten($lime,15%) $lime));
     border: 1px solid $green;
+    text-align: right;
     span.nav-stage {
         color: $purple;
         font-size: 17px;
         font-weight: bold;
         font-style: italic;
+        float: left;
+    }
+    a {
+        position: relative;
+        font-size: 17px;
+        font-weight: bold;
+        color: $purple;
+        padding: 4px 18px 4px 80px;
+        @include border-radius(13px);
+        border: 1px solid $green;
+        @include background(linear-gradient(lighten($lime,10%) darken($lime,5%)));
+        margin: 0 0 0 50px;
+        span.stage-ico {
+            display: block;
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            @include border-radius(50px);
+            border: 2px solid $green;
+            left: -24px;
+            top: -60px;
+            overflow: hidden;
+            background: $white;
+            @include box-shadow(0 1px 2px 1px black(0.15));
+        }
     }
 }
-.touchcarousel-wrapper {
+.carousel-wrapper {
     width: 100%;
     height: auto;
-    max-width: 930px;
     max-height: 360px;
-    margin: auto;
-    margin-bottom: 20px;
+    padding: 0 35px;
+    margin: 0 auto 20px;
 }
-ul.touchcarousel-container {
-    margin: 0;
-}
-.orbit-wrapper .slider-nav span {
-        top: 0;
-        margin-top: 0;
-    &.left {
-        @include imgRep(35px,360px,$spriteImg,0px,-100px);
-        left: -35px;
-        position: absolute;
-    }
-    &.right {
-        @include imgRep(35px,360px,$spriteImg,-40px,-100px);
-        right: -35px;
-        position: absolute;
+.orbit-wrapper .slider-nav {
+    width: 100%;
+    height: 100%;
+    max-height: 360px;
+    position: absolute;
+    top: 0px;
+    span {
+            top: 0;
+            margin-top: 0;
+        &.left {
+            @include imgRep(35px,100%,$spriteImg,0px,-100px);
+            left: -35px;
+        }
+        &.right {
+            @include imgRep(35px,100%,$spriteImg,-40px,-100px);
+            right: -35px;
+        }
     }
 }
 ul.orbit-bullets {
@@ -195,7 +364,7 @@ ul.orbit-bullets {
         height: 30px;
         border: 2px solid $white;
         @include border-radius(15px);
-        @include background-image(linear-gradient(#eca4d6, #e271bf 50%, #db4eaf 51%, #e065ba));
+        @include background(linear-gradient(#eca4d6, #e271bf 50%, #db4eaf 51%, #e065ba));
         background-position: 0 0;
         font-size: 16px;
         font-weight: bold;
@@ -222,7 +391,7 @@ span.crop {
         @include imgRep(100%,100px,$spriteImg,0px,-470px);
         position: absolute;
         top: 0;
-        left: 45px;
+        left: 35px;
         max-width: 930px;
     }
 }
@@ -233,6 +402,7 @@ span.crop {
     overflow: hidden;
     margin: 0 0 20px 0;
     h4 {
+        @include border-radius(13px 13px 0 0);
         text-align: center;
         @include imgRep(100%,63px,"images/box-header.png",50%,0);
         background-size: 100% 100%;
@@ -242,5 +412,119 @@ span.crop {
         text-indent: 0px;
         margin: 0;
         z-index: 10;
+    }
+    &.ads {
+        border: 3px solid $purple;
+        padding: 10px;
+        text-align: center;
+    }
+}
+// Custom responsive tweaks
+@media only screen and (max-width: 1019px) and (min-width: 768px) {
+    .carousel-wrapper {
+        overflow: hidden;
+    }
+    .orbit-wrapper .slider-nav {
+        span {
+            overflow: hidden;
+            &.left {
+                @include border-radius(0 0 0 13px);
+            }
+            &.right {
+                @include border-radius(0 0 13px 0);
+            }
+        }
+    }
+    span.crop.lrg {
+        display: none;
+        height: 0px;
+    }
+}
+@media only screen and (max-width: 767px) {
+    input.search-box {
+        max-width: 100%;
+    }
+    nav.nav-admin {
+        padding: 24px 0 12px;
+    }
+    #logo {
+        margin: 0 auto 20px;
+    }
+    nav.nav-promo {
+        text-align: center;
+    }
+    nav.nav-main {
+        margin-top: 90px; 
+        text-align: center;
+        span.nav-stage {
+            display: none;
+        }
+        a {
+            display: inline-block;
+            padding: 15px 4px 4px;
+            margin: 0;
+            width: 30%;
+            &.middle {
+                margin: 0 4%;
+            }
+            span.stage-ico {
+                top: -90px;
+                left: -50px;
+                margin-left: 50%;
+            }
+        }
+    }
+    .carousel-wrapper {
+        padding: 0;
+    }
+    #featured {
+        @include border-radius(13px);
+    }
+    .ads {
+        min-height: inherit;
+    }
+}
+@media only screen and (max-width: 359px) {
+    .row .mobile-two {
+        width: 100% !important;
+    }
+    #topbar {
+        padding: 10px 0;
+    }
+    .searchbar {
+        margin-top: 10px;
+        input.search-btn {
+            width: 70px;
+            background-position: -885px -127px;
+        }
+    }
+    nav.nav-admin {
+        text-align: left;
+    }
+    nav.nav-promo a {
+        display: block;
+        text-align: left;
+    }
+    nav.nav-main {
+        margin-top: 20px;
+        text-align: left;
+        span.nav-stage {
+            display: block;
+            float: none;
+        }
+        a {
+            display: block;
+            width: 100%;
+            padding: 8px 0;
+            background: none;
+            border: none;
+            border-bottom: 1px dashed darken($lime,10%);
+            span.stage-ico {
+                display: none;
+            }
+            &.middle {
+                margin: 0;
+            }
+        }
     }
 }

@@ -2705,16 +2705,89 @@ table.hide-for-medium {
     margin: 0;
   }
 }
-/* line 59, ../sass/screen.scss */
+/* line 74, ../sass/screen.scss */
+.pie-element, .bordered, .gradient, .lt-ie9 #topbar, .lt-ie9 #navbar, .lt-ie9 .box, .lt-ie9 .box h4 {
+  behavior: url("css/PIE.htc");
+  position: relative;
+}
+
+/* line 79, ../sass/screen.scss */
+.bordered {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+
+/* line 84, ../sass/screen.scss */
+.gradient {
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff0000), color-stop(100%, #0000ff));
+  background: -webkit-linear-gradient(#ff0000, #0000ff);
+  background: -moz-linear-gradient(#ff0000, #0000ff);
+  background: -o-linear-gradient(#ff0000, #0000ff);
+  -pie-background: linear-gradient(#ff0000, #0000ff);
+  background: linear-gradient(#ff0000, #0000ff);
+}
+
+/* line 96, ../sass/screen.scss */
+.pie-container, .widget, .lt-ie9 .searchbar {
+  z-index: 0;
+  position: relative;
+}
+
+/* line 99, ../sass/screen.scss */
+.z-pie-element, .widget h3, .lt-ie9 .searchbar input {
+  behavior: url("css/PIE.htc");
+}
+
+/* line 115, ../sass/screen.scss */
+.lt-ie9 .row, .lt-ie9 .columns, .lt-ie9 #navbar, .lt-ie9 .nav-promo, .lt-ie9 .nav-main, .lt-ie9 .carousel-wrapper {
+  *behavior: url("css/boxsizing.htc");
+}
+/* line 126, ../sass/screen.scss */
+.lt-ie9 #topbar {
+  -webkit-border-radius: 0 0 8px 8px;
+  -moz-border-radius: 0 0 8px 8px;
+  -ms-border-radius: 0 0 8px 8px;
+  -o-border-radius: 0 0 8px 8px;
+  border-radius: 0 0 8px 8px;
+}
+/* line 134, ../sass/screen.scss */
+.lt-ie9 .searchbar input.search-btn {
+  top: 1px;
+  *top: 2px;
+}
+/* line 140, ../sass/screen.scss */
+.lt-ie9 .orbit-wrapper .slider-nav span.right {
+  background: url("images/pull-ups_sprites.png") no-repeat -40px -100px transparent;
+}
+/* line 143, ../sass/screen.scss */
+.lt-ie9 .orbit-wrapper .slider-nav span.left {
+  background: url("images/pull-ups_sprites.png") no-repeat 0px -100px transparent;
+}
+/* line 147, ../sass/screen.scss */
+.lt-ie9 .box h4 {
+  background-image: url(images/box-header-ie.png);
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='[images/box-header-ie.png]', sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader( src='[images/box-header-ie.png]', sizingMethod='scale')";
+}
+
+/* line 154, ../sass/screen.scss */
+.ie9 .searchbar input.search-btn {
+  height: 26px;
+}
+
+/* line 159, ../sass/screen.scss */
 .clearfix {
   *zoom: 1;
 }
-/* line 68, ../sass/_base.scss */
+/* line 66, ../sass/_base.scss */
 .clearfix:before, .clearfix:after {
   content: "";
   display: table;
 }
-/* line 72, ../sass/_base.scss */
+/* line 70, ../sass/_base.scss */
 .clearfix:after {
   height: 0;
   clear: both;
@@ -2722,24 +2795,44 @@ table.hide-for-medium {
   visibility: hidden;
 }
 
-/* line 62, ../sass/screen.scss */
+/* line 162, ../sass/screen.scss */
+input.input-txt {
+  margin: 0;
+}
+/* line 164, ../sass/screen.scss */
+input.input-txt:focus {
+  outline: none;
+}
+
+/* line 168, ../sass/screen.scss */
+div {
+  position: relative;
+}
+
+/* line 171, ../sass/screen.scss */
 body {
   background: #f5f2eb;
 }
 
-/* line 65, ../sass/screen.scss */
+/* line 174, ../sass/screen.scss */
 .container {
   background: white;
 }
 
-/* line 68, ../sass/screen.scss */
+/* line 177, ../sass/screen.scss */
 .noborder, nav.nav-admin a:last-child, #navbar {
-  border-color: transparent;
-  border-style: none;
-  border-width: 0;
+  border-color: transparent !important;
+  border-style: none !important;
+  border-width: 0 !important;
 }
 
-/* line 73, ../sass/screen.scss */
+/* line 182, ../sass/screen.scss */
+.btn-notxt, input.input-btn.search-btn {
+  *font-size: 0px;
+  *line-height: 0px;
+}
+
+/* line 186, ../sass/screen.scss */
 #topbar {
   height: auto;
   min-height: 30px;
@@ -2751,98 +2844,150 @@ body {
   -ms-border-radius: 0 0 5px 5px;
   -o-border-radius: 0 0 5px 5px;
   border-radius: 0 0 5px 5px;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fefefd), color-stop(100%, #d0e09c));
-  background-image: -webkit-linear-gradient(#fefefd, #d0e09c);
-  background-image: -moz-linear-gradient(#fefefd, #d0e09c);
-  background-image: -o-linear-gradient(#fefefd, #d0e09c);
-  background-image: linear-gradient(#fefefd, #d0e09c);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fefefd), color-stop(100%, #d0e09c));
+  background: -webkit-linear-gradient(#fefefd, #d0e09c);
+  background: -moz-linear-gradient(#fefefd, #d0e09c);
+  background: -o-linear-gradient(#fefefd, #d0e09c);
+  -pie-background: linear-gradient(#fefefd, #d0e09c);
+  background: linear-gradient(#fefefd, #d0e09c);
 }
 
-/* line 82, ../sass/screen.scss */
+/* line 195, ../sass/screen.scss */
 .contact span {
   color: #888888;
   font-size: 16px;
   font-weight: bold;
   float: left;
-  padding-top: 10px;
+  padding-top: 12px;
   margin-right: 10px;
 }
 
-/* line 90, ../sass/screen.scss */
+/* line 203, ../sass/screen.scss */
 span.tel {
   display: block;
   position: relative;
   width: 30px;
   height: 30px;
-  background-image: url("images/pull-ups_sprites.png");
-  background-repeat: no-repeat;
-  background-size: auto auto;
-  background-color: transparent;
-  background-position: -180px 0px;
+  background: url("images/pull-ups_sprites.png") no-repeat -180px 0px transparent;
+  -webkit-background-size: auto;
+  -moz-background-size: auto;
+  -o-background-size: auto;
+  background-size: auto;
   border: 0;
   text-shadow: none;
   text-indent: -9999px;
   overflow: hidden;
 }
 
-/* line 93, ../sass/screen.scss */
+/* line 206, ../sass/screen.scss */
 span.email {
   display: block;
   position: relative;
   width: 30px;
   height: 30px;
-  background-image: url("images/pull-ups_sprites.png");
-  background-repeat: no-repeat;
-  background-size: auto auto;
-  background-color: transparent;
-  background-position: -210px 0px;
+  background: url("images/pull-ups_sprites.png") no-repeat -210px 0px transparent;
+  -webkit-background-size: auto;
+  -moz-background-size: auto;
+  -o-background-size: auto;
+  background-size: auto;
   border: 0;
   text-shadow: none;
   text-indent: -9999px;
   overflow: hidden;
 }
 
-/* line 96, ../sass/screen.scss */
+/* line 209, ../sass/screen.scss */
 span.sms {
   display: block;
   position: relative;
   width: 30px;
   height: 30px;
-  background-image: url("images/pull-ups_sprites.png");
-  background-repeat: no-repeat;
-  background-size: auto auto;
-  background-color: transparent;
-  background-position: -240px 0px;
+  background: url("images/pull-ups_sprites.png") no-repeat -240px 0px transparent;
+  -webkit-background-size: auto;
+  -moz-background-size: auto;
+  -o-background-size: auto;
+  background-size: auto;
   border: 0;
   text-shadow: none;
   text-indent: -9999px;
   overflow: hidden;
 }
 
-/* line 99, ../sass/screen.scss */
+/* line 212, ../sass/screen.scss */
 span.ico {
   margin: 3px 10px 0 0;
   cursor: pointer;
+  padding-top: 0px;
 }
 
-/* line 103, ../sass/screen.scss */
+/* line 217, ../sass/screen.scss */
+.searchbar {
+  top: 5px;
+  text-align: right;
+}
+
+/* line 221, ../sass/screen.scss */
+input.search-box {
+  width: 100%;
+  max-width: 230px;
+  padding: 5px 50px 5px 10px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  border-radius: 15px;
+  border: 1px solid #e6e6e6;
+}
+
+/* line 229, ../sass/screen.scss */
+input.input-btn.search-btn {
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  border-radius: 15px;
+  border: 1px solid #e6e6e6;
+  display: block;
+  position: relative;
+  width: 40px;
+  height: 27px;
+  background: url("images/pull-ups_sprites.png") no-repeat -900px -127px transparent;
+  -webkit-background-size: auto;
+  -moz-background-size: auto;
+  -o-background-size: auto;
+  background-size: auto;
+  border: 0;
+  text-shadow: none;
+  text-indent: -9999px;
+  overflow: hidden;
+  background-color: #1992d1;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+/* line 238, ../sass/screen.scss */
+input.input-btn.search-btn:hover {
+  cursor: pointer;
+}
+
+/* line 243, ../sass/screen.scss */
 nav.nav-admin {
   text-align: right;
-  padding-top: 10px;
+  padding-top: 12px;
 }
-/* line 106, ../sass/screen.scss */
+/* line 246, ../sass/screen.scss */
 nav.nav-admin a {
   color: #888888;
   padding: 0 10px;
   border-right: 1px solid #888888;
 }
 
-/* line 115, ../sass/screen.scss */
+/* line 255, ../sass/screen.scss */
 #navbar {
   width: 100%;
   height: auto;
   min-height: 160px;
-  padding: 10px 0;
+  padding: 10px 10px 15px;
   margin: 0 0 20px 0 !important;
   background-color: #1992d1;
   -webkit-border-radius: 13px;
@@ -2850,35 +2995,36 @@ nav.nav-admin a {
   -ms-border-radius: 13px;
   -o-border-radius: 13px;
   border-radius: 13px;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #36aae7), color-stop(100%, #bfe4f7));
-  background-image: -webkit-linear-gradient(#36aae7, #bfe4f7);
-  background-image: -moz-linear-gradient(#36aae7, #bfe4f7);
-  background-image: -o-linear-gradient(#36aae7, #bfe4f7);
-  background-image: linear-gradient(#36aae7, #bfe4f7);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #36aae7), color-stop(100%, #bfe4f7));
+  background: -webkit-linear-gradient(#36aae7, #bfe4f7);
+  background: -moz-linear-gradient(#36aae7, #bfe4f7);
+  background: -o-linear-gradient(#36aae7, #bfe4f7);
+  -pie-background: linear-gradient(#36aae7, #bfe4f7);
+  background: linear-gradient(#36aae7, #bfe4f7);
 }
 
-/* line 126, ../sass/screen.scss */
+/* line 266, ../sass/screen.scss */
 #logo {
   display: block;
   position: relative;
   width: 180px;
   height: 100px;
-  background-image: url("images/pull-ups_sprites.png");
-  background-repeat: no-repeat;
-  background-size: auto auto;
-  background-color: transparent;
-  background-position: 0px 0px;
+  background: url("images/pull-ups_sprites.png") no-repeat 0px 0px transparent;
+  -webkit-background-size: auto;
+  -moz-background-size: auto;
+  -o-background-size: auto;
+  background-size: auto;
   border: 0;
   text-shadow: none;
   text-indent: -9999px;
   overflow: hidden;
 }
 
-/* line 129, ../sass/screen.scss */
+/* line 269, ../sass/screen.scss */
 nav.nav-promo {
   text-align: right;
 }
-/* line 131, ../sass/screen.scss */
+/* line 271, ../sass/screen.scss */
 nav.nav-promo a {
   color: white;
   font-size: 17px;
@@ -2887,11 +3033,11 @@ nav.nav-promo a {
   position: relative;
   width: auto;
   height: 40px;
-  background-image: url("images/pull-ups_sprites.png");
-  background-repeat: no-repeat;
-  background-size: auto auto;
-  background-color: transparent;
-  background-position: -890px 0px;
+  background: url("images/pull-ups_sprites.png") no-repeat -890px 0px transparent;
+  -webkit-background-size: auto;
+  -moz-background-size: auto;
+  -o-background-size: auto;
+  background-size: auto;
   border: 0;
   text-shadow: none;
   text-indent: -9999px;
@@ -2901,17 +3047,18 @@ nav.nav-promo a {
   padding: 12px 0 0 48px;
   margin: 0 10px 0 0;
   overflow: visible;
+  *height: 28px;
 }
-/* line 142, ../sass/screen.scss */
+/* line 283, ../sass/screen.scss */
 nav.nav-promo a.promo {
   background-position: -890px -40px;
 }
-/* line 145, ../sass/screen.scss */
+/* line 286, ../sass/screen.scss */
 nav.nav-promo a.games {
   background-position: -890px -80px;
 }
 
-/* line 149, ../sass/screen.scss */
+/* line 290, ../sass/screen.scss */
 nav.nav-main {
   height: auto;
   min-height: 40px;
@@ -2923,83 +3070,128 @@ nav.nav-main {
   -ms-border-radius: 13px;
   -o-border-radius: 13px;
   border-radius: 13px;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e2ecc3), color-stop(100%, #d0e09c));
-  background-image: -webkit-linear-gradient(#e2ecc3, #d0e09c);
-  background-image: -moz-linear-gradient(#e2ecc3, #d0e09c);
-  background-image: -o-linear-gradient(#e2ecc3, #d0e09c);
-  background-image: linear-gradient(#e2ecc3, #d0e09c);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ecf2d6), color-stop(100%, #d0e09c));
+  background: -webkit-linear-gradient(#ecf2d6, #d0e09c);
+  background: -moz-linear-gradient(#ecf2d6, #d0e09c);
+  background: -o-linear-gradient(#ecf2d6, #d0e09c);
+  -pie-background: linear-gradient(#ecf2d6, #d0e09c);
+  background: linear-gradient(#ecf2d6, #d0e09c);
   border: 1px solid #8cc69e;
+  text-align: right;
 }
-/* line 158, ../sass/screen.scss */
+/* line 300, ../sass/screen.scss */
 nav.nav-main span.nav-stage {
   color: #803594;
   font-size: 17px;
   font-weight: bold;
   font-style: italic;
+  float: left;
+}
+/* line 307, ../sass/screen.scss */
+nav.nav-main a {
+  position: relative;
+  font-size: 17px;
+  font-weight: bold;
+  color: #803594;
+  padding: 4px 18px 4px 80px;
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  -ms-border-radius: 13px;
+  -o-border-radius: 13px;
+  border-radius: 13px;
+  border: 1px solid #8cc69e;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e2ecc3), color-stop(100%, #c7da89));
+  background: -webkit-linear-gradient(#e2ecc3, #c7da89);
+  background: -moz-linear-gradient(#e2ecc3, #c7da89);
+  background: -o-linear-gradient(#e2ecc3, #c7da89);
+  -pie-background: linear-gradient(#e2ecc3, #c7da89);
+  background: linear-gradient(#e2ecc3, #c7da89);
+  margin: 0 0 0 50px;
+}
+/* line 317, ../sass/screen.scss */
+nav.nav-main a span.stage-ico {
+  display: block;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  border-radius: 50px;
+  border: 2px solid #8cc69e;
+  left: -24px;
+  top: -60px;
+  overflow: hidden;
+  background: white;
+  -webkit-box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.15);
 }
 
-/* line 165, ../sass/screen.scss */
-.touchcarousel-wrapper {
+/* line 333, ../sass/screen.scss */
+.carousel-wrapper {
   width: 100%;
   height: auto;
-  max-width: 930px;
   max-height: 360px;
-  margin: auto;
-  margin-bottom: 20px;
+  padding: 0 35px;
+  margin: 0 auto 20px;
 }
 
-/* line 173, ../sass/screen.scss */
-ul.touchcarousel-container {
-  margin: 0;
+/* line 340, ../sass/screen.scss */
+.orbit-wrapper .slider-nav {
+  width: 100%;
+  height: 100%;
+  max-height: 360px;
+  position: absolute;
+  top: 0px;
 }
-
-/* line 176, ../sass/screen.scss */
+/* line 346, ../sass/screen.scss */
 .orbit-wrapper .slider-nav span {
   top: 0;
   margin-top: 0;
 }
-/* line 179, ../sass/screen.scss */
+/* line 349, ../sass/screen.scss */
 .orbit-wrapper .slider-nav span.left {
   display: block;
   position: relative;
   width: 35px;
-  height: 360px;
-  background-image: url("images/pull-ups_sprites.png");
-  background-repeat: no-repeat;
-  background-size: auto auto;
-  background-color: transparent;
-  background-position: 0px -100px;
+  height: 100%;
+  background: url("images/pull-ups_sprites.png") no-repeat 0px -100px transparent;
+  -webkit-background-size: auto;
+  -moz-background-size: auto;
+  -o-background-size: auto;
+  background-size: auto;
   border: 0;
   text-shadow: none;
   text-indent: -9999px;
   overflow: hidden;
   left: -35px;
-  position: absolute;
 }
-/* line 184, ../sass/screen.scss */
+/* line 353, ../sass/screen.scss */
 .orbit-wrapper .slider-nav span.right {
   display: block;
   position: relative;
   width: 35px;
-  height: 360px;
-  background-image: url("images/pull-ups_sprites.png");
-  background-repeat: no-repeat;
-  background-size: auto auto;
-  background-color: transparent;
-  background-position: -40px -100px;
+  height: 100%;
+  background: url("images/pull-ups_sprites.png") no-repeat -40px -100px transparent;
+  -webkit-background-size: auto;
+  -moz-background-size: auto;
+  -o-background-size: auto;
+  background-size: auto;
   border: 0;
   text-shadow: none;
   text-indent: -9999px;
   overflow: hidden;
   right: -35px;
-  position: absolute;
 }
 
-/* line 190, ../sass/screen.scss */
+/* line 359, ../sass/screen.scss */
 ul.orbit-bullets {
   bottom: 0px;
 }
-/* line 192, ../sass/screen.scss */
+/* line 361, ../sass/screen.scss */
 ul.orbit-bullets li {
   color: white;
   width: 30px;
@@ -3010,11 +3202,12 @@ ul.orbit-bullets li {
   -ms-border-radius: 15px;
   -o-border-radius: 15px;
   border-radius: 15px;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eca4d6), color-stop(50%, #e271bf), color-stop(51%, #db4eaf), color-stop(100%, #e065ba));
-  background-image: -webkit-linear-gradient(#eca4d6, #e271bf 50%, #db4eaf 51%, #e065ba);
-  background-image: -moz-linear-gradient(#eca4d6, #e271bf 50%, #db4eaf 51%, #e065ba);
-  background-image: -o-linear-gradient(#eca4d6, #e271bf 50%, #db4eaf 51%, #e065ba);
-  background-image: linear-gradient(#eca4d6, #e271bf 50%, #db4eaf 51%, #e065ba);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eca4d6), color-stop(50%, #e271bf), color-stop(51%, #db4eaf), color-stop(100%, #e065ba));
+  background: -webkit-linear-gradient(#eca4d6, #e271bf 50%, #db4eaf 51%, #e065ba);
+  background: -moz-linear-gradient(#eca4d6, #e271bf 50%, #db4eaf 51%, #e065ba);
+  background: -o-linear-gradient(#eca4d6, #e271bf 50%, #db4eaf 51%, #e065ba);
+  -pie-background: linear-gradient(#eca4d6, #e271bf 50%, #db4eaf 51%, #e065ba);
+  background: linear-gradient(#eca4d6, #e271bf 50%, #db4eaf 51%, #e065ba);
   background-position: 0 0;
   font-size: 16px;
   font-weight: bold;
@@ -3022,13 +3215,13 @@ ul.orbit-bullets li {
   text-indent: 0px;
   text-align: center;
 }
-/* line 205, ../sass/screen.scss */
+/* line 374, ../sass/screen.scss */
 ul.orbit-bullets li.active, ul.orbit-bullets li:hover {
   background-position: 0 0;
   color: #1992d1;
 }
 
-/* line 211, ../sass/screen.scss */
+/* line 380, ../sass/screen.scss */
 .lt-ie10 ul.orbit-bullets li {
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
@@ -3039,11 +3232,11 @@ ul.orbit-bullets li.active, ul.orbit-bullets li:hover {
   position: relative;
   width: 30px;
   height: 30px;
-  background-image: url("images/pull-ups_sprites.png");
-  background-repeat: no-repeat;
-  background-size: auto auto;
-  background-color: transparent;
-  background-position: -80px -100px;
+  background: url("images/pull-ups_sprites.png") no-repeat -80px -100px transparent;
+  -webkit-background-size: auto;
+  -moz-background-size: auto;
+  -o-background-size: auto;
+  background-size: auto;
   border: 0;
   text-shadow: none;
   text-indent: -9999px;
@@ -3051,37 +3244,37 @@ ul.orbit-bullets li.active, ul.orbit-bullets li:hover {
   text-indent: 0px;
 }
 
-/* line 216, ../sass/screen.scss */
+/* line 385, ../sass/screen.scss */
 .orbit.with-bullets {
   margin-bottom: 0px;
 }
 
-/* line 219, ../sass/screen.scss */
+/* line 388, ../sass/screen.scss */
 span.crop {
   z-index: 5;
 }
-/* line 221, ../sass/screen.scss */
+/* line 390, ../sass/screen.scss */
 span.crop.lrg {
   display: block;
   position: relative;
   width: 100%;
   height: 100px;
-  background-image: url("images/pull-ups_sprites.png");
-  background-repeat: no-repeat;
-  background-size: auto auto;
-  background-color: transparent;
-  background-position: 0px -470px;
+  background: url("images/pull-ups_sprites.png") no-repeat 0px -470px transparent;
+  -webkit-background-size: auto;
+  -moz-background-size: auto;
+  -o-background-size: auto;
+  background-size: auto;
   border: 0;
   text-shadow: none;
   text-indent: -9999px;
   overflow: hidden;
   position: absolute;
   top: 0;
-  left: 45px;
+  left: 35px;
   max-width: 930px;
 }
 
-/* line 229, ../sass/screen.scss */
+/* line 398, ../sass/screen.scss */
 .box {
   background: #f5f2eb;
   min-height: 290px;
@@ -3093,18 +3286,23 @@ span.crop.lrg {
   overflow: hidden;
   margin: 0 0 20px 0;
 }
-/* line 235, ../sass/screen.scss */
+/* line 404, ../sass/screen.scss */
 .box h4 {
+  -webkit-border-radius: 13px 13px 0 0;
+  -moz-border-radius: 13px 13px 0 0;
+  -ms-border-radius: 13px 13px 0 0;
+  -o-border-radius: 13px 13px 0 0;
+  border-radius: 13px 13px 0 0;
   text-align: center;
   display: block;
   position: relative;
   width: 100%;
   height: 63px;
-  background-image: url("images/box-header.png");
-  background-repeat: no-repeat;
-  background-size: auto auto;
-  background-color: transparent;
-  background-position: 50% 0;
+  background: url("images/box-header.png") no-repeat 50% 0 transparent;
+  -webkit-background-size: auto;
+  -moz-background-size: auto;
+  -o-background-size: auto;
+  background-size: auto;
   border: 0;
   text-shadow: none;
   text-indent: -9999px;
@@ -3116,4 +3314,171 @@ span.crop.lrg {
   text-indent: 0px;
   margin: 0;
   z-index: 10;
+}
+/* line 416, ../sass/screen.scss */
+.box.ads {
+  border: 3px solid #803594;
+  padding: 10px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 1019px) and (min-width: 768px) {
+  /* line 424, ../sass/screen.scss */
+  .carousel-wrapper {
+    overflow: hidden;
+  }
+
+  /* line 428, ../sass/screen.scss */
+  .orbit-wrapper .slider-nav span {
+    overflow: hidden;
+  }
+  /* line 430, ../sass/screen.scss */
+  .orbit-wrapper .slider-nav span.left {
+    -webkit-border-radius: 0 0 0 13px;
+    -moz-border-radius: 0 0 0 13px;
+    -ms-border-radius: 0 0 0 13px;
+    -o-border-radius: 0 0 0 13px;
+    border-radius: 0 0 0 13px;
+  }
+  /* line 433, ../sass/screen.scss */
+  .orbit-wrapper .slider-nav span.right {
+    -webkit-border-radius: 0 0 13px 0;
+    -moz-border-radius: 0 0 13px 0;
+    -ms-border-radius: 0 0 13px 0;
+    -o-border-radius: 0 0 13px 0;
+    border-radius: 0 0 13px 0;
+  }
+
+  /* line 438, ../sass/screen.scss */
+  span.crop.lrg {
+    display: none;
+    height: 0px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  /* line 444, ../sass/screen.scss */
+  input.search-box {
+    max-width: 100%;
+  }
+
+  /* line 447, ../sass/screen.scss */
+  nav.nav-admin {
+    padding: 24px 0 12px;
+  }
+
+  /* line 450, ../sass/screen.scss */
+  #logo {
+    margin: 0 auto 20px;
+  }
+
+  /* line 453, ../sass/screen.scss */
+  nav.nav-promo {
+    text-align: center;
+  }
+
+  /* line 456, ../sass/screen.scss */
+  nav.nav-main {
+    margin-top: 90px;
+    text-align: center;
+  }
+  /* line 459, ../sass/screen.scss */
+  nav.nav-main span.nav-stage {
+    display: none;
+  }
+  /* line 462, ../sass/screen.scss */
+  nav.nav-main a {
+    display: inline-block;
+    padding: 15px 4px 4px;
+    margin: 0;
+    width: 30%;
+  }
+  /* line 467, ../sass/screen.scss */
+  nav.nav-main a.middle {
+    margin: 0 4%;
+  }
+  /* line 470, ../sass/screen.scss */
+  nav.nav-main a span.stage-ico {
+    top: -90px;
+    left: -50px;
+    margin-left: 50%;
+  }
+
+  /* line 477, ../sass/screen.scss */
+  .carousel-wrapper {
+    padding: 0;
+  }
+
+  /* line 480, ../sass/screen.scss */
+  #featured {
+    -webkit-border-radius: 13px;
+    -moz-border-radius: 13px;
+    -ms-border-radius: 13px;
+    -o-border-radius: 13px;
+    border-radius: 13px;
+  }
+
+  /* line 483, ../sass/screen.scss */
+  .ads {
+    min-height: inherit;
+  }
+}
+@media only screen and (max-width: 359px) {
+  /* line 488, ../sass/screen.scss */
+  .row .mobile-two {
+    width: 100% !important;
+  }
+
+  /* line 491, ../sass/screen.scss */
+  #topbar {
+    padding: 10px 0;
+  }
+
+  /* line 494, ../sass/screen.scss */
+  .searchbar {
+    margin-top: 10px;
+  }
+  /* line 496, ../sass/screen.scss */
+  .searchbar input.search-btn {
+    width: 70px;
+    background-position: -885px -127px;
+  }
+
+  /* line 501, ../sass/screen.scss */
+  nav.nav-admin {
+    text-align: left;
+  }
+
+  /* line 504, ../sass/screen.scss */
+  nav.nav-promo a {
+    display: block;
+    text-align: left;
+  }
+
+  /* line 508, ../sass/screen.scss */
+  nav.nav-main {
+    margin-top: 20px;
+    text-align: left;
+  }
+  /* line 511, ../sass/screen.scss */
+  nav.nav-main span.nav-stage {
+    display: block;
+    float: none;
+  }
+  /* line 515, ../sass/screen.scss */
+  nav.nav-main a {
+    display: block;
+    width: 100%;
+    padding: 8px 0;
+    background: none;
+    border: none;
+    border-bottom: 1px dashed #bed475;
+  }
+  /* line 522, ../sass/screen.scss */
+  nav.nav-main a span.stage-ico {
+    display: none;
+  }
+  /* line 525, ../sass/screen.scss */
+  nav.nav-main a.middle {
+    margin: 0;
+  }
 }
