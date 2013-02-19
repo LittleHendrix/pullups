@@ -582,8 +582,11 @@ nav.nav-lower {
             background-position: -885px -127px;
         }
     }
-    nav.nav-admin, nav.nav-lower {
+    nav.nav-admin {
         text-align: left;
+        a:first-child {
+            padding-left: 0px;
+        }
     }
     nav.nav-promo a {
         display: block;
@@ -612,6 +615,7 @@ nav.nav-lower {
         }
     }
     nav.nav-lower {
+        text-align: left;
         margin-top: 15px;
         padding-top: 10px;
         border-top: 1px dashed darken($lime,5%);

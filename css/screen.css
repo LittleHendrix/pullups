@@ -3570,27 +3570,31 @@ nav.nav-lower a {
   }
 
   /* line 585, ../sass/screen.scss */
-  nav.nav-admin, nav.nav-lower {
+  nav.nav-admin {
     text-align: left;
   }
+  /* line 587, ../sass/screen.scss */
+  nav.nav-admin a:first-child {
+    padding-left: 0px;
+  }
 
-  /* line 588, ../sass/screen.scss */
+  /* line 591, ../sass/screen.scss */
   nav.nav-promo a {
     display: block;
     text-align: left;
   }
 
-  /* line 592, ../sass/screen.scss */
+  /* line 595, ../sass/screen.scss */
   nav.nav-main {
     margin-top: 20px;
     text-align: left;
   }
-  /* line 595, ../sass/screen.scss */
+  /* line 598, ../sass/screen.scss */
   nav.nav-main span.nav-stage {
     display: block;
     float: none;
   }
-  /* line 599, ../sass/screen.scss */
+  /* line 602, ../sass/screen.scss */
   nav.nav-main a {
     display: block;
     width: 100%;
@@ -3599,22 +3603,23 @@ nav.nav-lower a {
     border: none;
     border-bottom: 1px dashed #bed475;
   }
-  /* line 606, ../sass/screen.scss */
+  /* line 609, ../sass/screen.scss */
   nav.nav-main a span.stage-ico {
     display: none;
   }
-  /* line 609, ../sass/screen.scss */
+  /* line 612, ../sass/screen.scss */
   nav.nav-main a.middle {
     margin: 0;
   }
 
-  /* line 614, ../sass/screen.scss */
+  /* line 617, ../sass/screen.scss */
   nav.nav-lower {
+    text-align: left;
     margin-top: 15px;
     padding-top: 10px;
     border-top: 1px dashed #c7da89;
   }
-  /* line 618, ../sass/screen.scss */
+  /* line 622, ../sass/screen.scss */
   nav.nav-lower a {
     margin: 0;
     padding: 10px 0;
